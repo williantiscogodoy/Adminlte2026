@@ -1,0 +1,19 @@
+table chats {
+    id int [pk, increment]
+    nombre varchar(255)
+    apellido varchar(255)
+    email varchar(255)
+    telefono varchar(20)
+    created_at datetime
+    updated_at datetime
+
+}
+
+table mensajes {
+    id int [pk, increment]
+    chat_id int [not null]
+    texto varchar(500)
+    created_at datetime
+    updated_at datetime
+}
+ref: mensajes.chat_id > chats.id
